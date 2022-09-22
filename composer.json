@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "hamza/php-arrays-all-in-one",
+    "description": "most user arrays php funcrion in one place",
     "keywords": [
-        ":vendor_name",
-        ":package_slug"
+        "hamza",
+        "php-arrays-all-in-one"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/hamza/php-arrays-all-in-one",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Hamza Benammi",
+            "email": "benammihamza@gmail.com",
             "role": "Developer"
         }
     ],
@@ -24,12 +24,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Hamza\\ArrayAIO\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "Hamza\\ArrayAIO\\Tests\\": "tests"
         }
     },
     "scripts": {
