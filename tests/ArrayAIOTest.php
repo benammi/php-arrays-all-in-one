@@ -8,7 +8,7 @@ it('string to array test', function () {
 });
 
 
-it('merge arrays test', function(){
-    $arr = ArrayAIO::mergeArrays([1,2],[3],['r']);
+it('merge arrays test', function () {
+    $arr = ArrayAIO::mergeArrays([1,2], [3], ['r']);
     expect($arr)->toEqual([1,2,3,'r']);
 });
