@@ -10,4 +10,10 @@ class ArrayAIO
 
         return $arr;
     }
+
+    public static function mergeArrays(array ...$arrays): array
+    {
+        $arr = array_merge(...$arrays);
+        return $arr;
+    }
 }
