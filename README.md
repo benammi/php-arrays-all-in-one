@@ -18,8 +18,8 @@ composer require hamza/php-arrays-all-in-one
 ## Usage
 
 ```php
-$skeleton = new Hamza\ArrayAIO();
-echo $skeleton->echoPhrase('Hello, Hamza!');
+$arrayAIO = new Hamza\ArrayAIO();
+echo $arrayAIO->echoPhrase('Hello, Hamza!');
 ```
 
 ## Testing
