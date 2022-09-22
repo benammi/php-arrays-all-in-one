@@ -4,9 +4,10 @@ namespace Hamza\ArrayAIO;
 
 class ArrayAIO
 {
-    public function stringToArray(string $str, string $separator=''):array
+    public static function stringToArray(string $str, string $separator = ''): array
     {
-        $arr = explode($str,$separator);
+        $arr = explode($separator, $str);
+
         return $arr;
     }
 }
