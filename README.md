@@ -1,8 +1,8 @@
 # most user arrays php funcrion in one place
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/hamza/php-arrays-all-in-one.svg?style=flat-square)](https://packagist.org/packages/hamza/php-arrays-all-in-one)
-[![Tests](https://github.com/hamza/php-arrays-all-in-one/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/hamza/php-arrays-all-in-one/actions/workflows/run-tests.yml)
-[![Total Downloads](https://img.shields.io/packagist/dt/hamza/php-arrays-all-in-one.svg?style=flat-square)](https://packagist.org/packages/hamza/php-arrays-all-in-one)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/benammi/php-arrays-all-in-one.svg?style=flat-square)](https://packagist.org/packages/benammi/php-arrays-all-in-one)
+[![Tests](https://github.com/benammi/php-arrays-all-in-one/actions/workflows/run-tests.yml/badge.svg?branch=main)](https://github.com/benammi/php-arrays-all-in-one/actions/workflows/run-tests.yml)
+[![Total Downloads](https://img.shields.io/packagist/dt/benammi/php-arrays-all-in-one.svg?style=flat-square)](https://packagist.org/packages/benammi/php-arrays-all-in-one)
 
 This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
 
@@ -12,14 +12,12 @@ This is where your description should go. Try and limit it to a paragraph or two
 You can install the package via composer:
 
 ```bash
-composer require hamza/php-arrays-all-in-one
+composer require benammi/php-arrays-all-in-one
 ```
 
 ## Usage
 
-```php
-$arrayAIO = new Hamza\ArrayAIO();
-echo $arrayAIO->echoPhrase('Hello, Hamza!');
+```
 ```
 
 ## Testing

@@ -1,6 +1,6 @@
 <?php
 
-namespace Hamza\ArrayAIO;
+namespace Benammi\ArrayAIO;
 
 class ArrayAIO
 {

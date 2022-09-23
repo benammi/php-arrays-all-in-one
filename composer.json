@@ -1,11 +1,12 @@
 {
-    "name": "hamza/php-arrays-all-in-one",
+    "name": "benammi/php-arrays-all-in-one",
     "description": "most user arrays php funcrion in one place",
     "keywords": [
         "hamza",
+        "php array",
         "php-arrays-all-in-one"
     ],
-    "homepage": "https://github.com/hamza/php-arrays-all-in-one",
+    "homepage": "https://github.com/benammi/php-arrays-all-in-one",
     "license": "MIT",
     "authors": [
         {
@@ -24,12 +25,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Hamza\\ArrayAIO\\": "src"
+            "Benammi\\ArrayAIO\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Hamza\\ArrayAIO\\Tests\\": "tests"
+            "Benammi\\ArrayAIO\\Tests\\": "tests"
         }
     },
     "scripts": {
