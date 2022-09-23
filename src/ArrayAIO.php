@@ -14,6 +14,7 @@ class ArrayAIO
     public static function mergeArrays(array ...$arrays): array
     {
         $arr = array_merge(...$arrays);
+
         return $arr;
     }
 }
