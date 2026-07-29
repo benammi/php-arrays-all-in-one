@@ -1,10 +1,14 @@
 {
     "name": "benammi/php-arrays-all-in-one",
-    "description": "most user arrays php funcrion in one place",
+    "description": "A safe, typed, fully documented PHP toolkit for everyday array operations.",
     "keywords": [
-        "hamza",
-        "php array",
-        "php-arrays-all-in-one"
+        "php",
+        "array",
+        "arrays",
+        "helpers",
+        "utilities",
+        "php-arrays-all-in-one",
+        "benammi"
     ],
     "homepage": "https://github.com/benammi/php-arrays-all-in-one",
     "license": "MIT",
@@ -16,11 +20,11 @@
         }
     ],
     "require": {
-        "php": "^8.0"
+        "php": "^8.1"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
-        "pestphp/pest": "^1.20",
+        "pestphp/pest": "^2.0|^3.0",
         "spatie/ray": "^1.28"
     },
     "autoload": {
