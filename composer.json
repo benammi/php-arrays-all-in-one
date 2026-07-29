@@ -1,10 +1,12 @@
 {
     "name": "benammi/php-arrays-all-in-one",
-    "description": "A safe, typed, fully documented PHP toolkit for everyday array operations.",
+    "description": "A safe, typed PHP array toolkit with Laravel-style Collections and static helpers.",
     "keywords": [
         "php",
         "array",
         "arrays",
+        "collection",
+        "collections",
         "helpers",
         "utilities",
         "php-arrays-all-in-one",
@@ -30,7 +32,10 @@
     "autoload": {
         "psr-4": {
             "Benammi\\ArrayAIO\\": "src"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {

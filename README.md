@@ -6,7 +6,10 @@
 
 A safe, typed, fully documented toolkit for everyday PHP array work.
 
-Use `Benammi\ArrayAIO\ArrayAIO` when you want predictable helpers with clear intent: immutable returns, dotted-key access, filtering, mapping, sorting, merging, and aggregation — without mutating the arrays you pass in.
+It ships two APIs:
+
+- **`collect()` / `Collection`** — a fluent, Laravel-style collection you can chain
+- **`ArrayAIO`** — static helpers when you prefer plain arrays
 
 **Requirements:** PHP 8.1+
 
@@ -18,7 +21,63 @@ composer require benammi/php-arrays-all-in-one
 
 ```php
 use Benammi\ArrayAIO\ArrayAIO;
+use Benammi\ArrayAIO\Collection;
 ```
+
+## Collection (Laravel-style)
+
+```php
+$users = collect([
+    ['name' => 'Hamza', 'active' => true, 'score' => 20],
+    ['name' => 'Sara', 'active' => false, 'score' => 35],
+    ['name' => 'Omar', 'active' => true, 'score' => 15],
+]);
+
+$names = $users
+    ->where('active', true)
+    ->sortBy('score')
+    ->pluck('name')
+    ->values()
+    ->all();
+// ['Omar', 'Hamza']
+
+collect([1, 2, 3, 4])
+    ->filter(fn ($n) => $n % 2 === 0)
+    ->map(fn ($n) => $n * 10)
+    ->sum();
+// 60
+```
+
+`Collection` implements `ArrayAccess`, `Countable`, `IteratorAggregate`, and `JsonSerializable`.
+Almost every transform returns a **new** collection so chaining stays safe.
+
+### Creating collections
+
+| Method | Description |
+| --- | --- |
+| `collect($items)` | Global helper |
+| `Collection::make($items)` | Explicit constructor helper |
+| `Collection::range($start, $end, $step = 1)` | Numeric/string range |
+| `Collection::times($n, $callback = null)` | Build N items |
+| `Collection::wrap($value)` / `unwrap($value)` | Normalize to/from collection |
+
+### Popular methods
+
+Filtering: `filter`, `reject`, `where`, `whereIn`, `whereBetween`, `whereNull`, `whereNotNull`, `whereInstanceOf`  
+Transforming: `map`, `mapWithKeys`, `flatMap`, `transform`, `each`, `reduce`, `pipe`  
+Retrieving: `get`, `first`, `last`, `sole`, `value`, `pull`, `random`, `pluck`  
+Organizing: `groupBy`, `keyBy`, `countBy`, `sort`, `sortBy`, `sortDesc`, `reverse`, `shuffle`  
+Slicing: `chunk`, `slice`, `take`, `skip`, `forPage`, `sliding`, `split`, `nth`  
+Combining: `merge`, `concat`, `union`, `zip`, `crossJoin`, `collapse`, `flatten`, `dot`, `undot`  
+Aggregates: `sum`, `avg`, `median`, `mode`, `min`, `max`, `percentage`, `count`  
+Conditionals: `when`, `unless`, `whenEmpty`, `whenNotEmpty`, `tap`  
+Output: `all`, `toArray`, `toJson`, `implode`, `join`
+
+Higher-order messages work too: `collect($rows)->map->name`.
+
+## ArrayAIO static helpers
+
+Use `Benammi\ArrayAIO\ArrayAIO` when you want predictable helpers with clear intent: immutable returns, dotted-key access, filtering, mapping, sorting, merging, and aggregation — without mutating the arrays you pass in.
 
 ## Quick examples
 
@@ -41,13 +100,15 @@ ArrayAIO::pluck([
 
 Safety notes:
 
-- Methods never mutate the input array; they return a new value.
+- Collection transforms return new instances (except mutating helpers like `transform`, `pull`, `pop`, `shift`, `splice`).
+- `ArrayAIO` methods never mutate the input array; they return a new value.
 - Missing keys use an explicit `$default` instead of notices/warnings.
-- Invalid arguments (empty chunk size, unequal `combine()` lengths, etc.) throw `InvalidArgumentException`.
+- Invalid arguments throw `InvalidArgumentException`.
+- `sole()` / `firstOrFail()` throw `ItemNotFoundException` / `MultipleItemsFoundException` when appropriate.
 
 ---
 
-## API reference
+## ArrayAIO API reference
 
 All methods are `public static` on `ArrayAIO`.
 

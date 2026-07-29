@@ -2,6 +2,16 @@
 
 All notable changes to `php-arrays-all-in-one` will be documented in this file.
 
+## 1.1.0 - 2026-07-29
+
+### Added
+- Laravel-style fluent `Collection` class with chaining, ArrayAccess, Countable, IteratorAggregate, and JsonSerializable
+- Global `collect()`, `value()`, and `data_get()` helpers
+- Higher-order collection messages (e.g. `$collection->map->name`)
+- Collection methods covering filter/where, map/reduce, sort/group, slice/chunk, merge/zip, aggregates, conditionals, and more
+- `ItemNotFoundException` and `MultipleItemsFoundException` for `sole()` / `firstOrFail()`
+- Pest coverage for the Collection API
+
 ## 1.0.0 - 2026-07-29
 
 ### Added
